@@ -26,7 +26,9 @@ function App() {
   }, []);
 
   const filteredCharacters = characters.filter((character) => {
-    return character.name.toLowerCase().includes(filter.toLocaleLowerCase());
+    const characterName = character.name.trim().toLowerCase();
+    const filterText = filter.trim().toLowerCase();
+    return characterName.includes(filterText);  
   });
 
   return (
